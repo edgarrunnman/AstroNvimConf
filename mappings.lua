@@ -50,10 +50,10 @@ return {
     -- buffers
     ["<A-j>"] = { "<cmd>bprevious<cr>", desc = "Prev buffer" },
     ["<A-k>"] = { "<cmd>bnext<cr>", desc = "Next buffer" },
-    ["<A-d>"] = { "<cmd>bd<cr>", desc = "Close buffer" },
+    ["<A-d>"] = { ":bp | sp | bn | bd<cr>", desc = "Close buffer" },
     ["<C-j>"] = { "<cmd>bprevious<cr>", desc = "Prev buffer" },
     ["<C-k>"] = { "<cmd>bnext<cr>", desc = "Next buffer" },
-    ["<C-d>"] = { "<cmd>bd<cr>", desc = "Close buffer" },
+    ["<C-d>"] = { "<cmd>bp | sp | bn | bd<cr>", desc = "Close buffer" },
 
     -- echo test
     -- ["<leader>a"] = { "<cmd>echo 'Hello'<cr>", desc = "test keymap" },
