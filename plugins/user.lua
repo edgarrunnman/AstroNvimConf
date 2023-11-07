@@ -9,4 +9,7 @@ return {
   --     require("lsp_signature").setup()
   --   end,
   -- },
+  -- KOTLIN prilar (funkar inte..10)
+  -- "fwcd/kotlin-language-server",
+  -- "fwcd/tree-sitter-kotlin",
 }

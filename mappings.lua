@@ -33,28 +33,32 @@ return {
     -- windows
     ["<A-l>"] = { "<C-w>l", desc = "next window" },
     ["<A-h>"] = { "<C-w>h", desc = "prev window" },
+    ["<A-j>"] = { "<C-w>j", desc = "down window" },
+    ["<A-k>"] = { "<C-w>k", desc = "up window" },
     --["<A-q>"] = { ":q<cr>", desc = "close window" },
     ["<A-p>"] = { "<C-w>v", desc = "vertical split" },
-    ["<A-o>"] = { "<C-w>", desc = "horizontal split" },
-    ["<A-m>"] = { "<cmd>vertical resize -10<cr>", desc = "Decrease window width" },
-    ["<A-,>"] = { "<cmd>vertical resize +5<cr>", desc = "Increase window width" },
+    ["<A-o>"] = { "<C-w>s", desc = "horizontal split" },
+    ["<A-,>"] = { "<cmd>vertical resize -10<cr>", desc = "Decrease window width" },
+    ["<A-.>"] = { "<cmd>vertical resize +10<cr>", desc = "Increase window width" },
 
     ["<C-l>"] = { "<C-w>l", desc = "next window" },
     ["<C-h>"] = { "<C-w>h", desc = "prev window" },
     --["<A-q>"] = { ":q<cr>", desc = "close window" },
-    ["<C-p>"] = { "<C-w>v", desc = "vertical split" },
-    ["<C-o>"] = { "<C-w>", desc = "horizontal split" },
+    ["<A-m>"] = { "<C-w>v", desc = "vertical split" },
+    ["<A-n>"] = { "<C-w>s", desc = "horizontal split" },
     ["<C-m>"] = { "<cmd>vertical resize -10<cr>", desc = "Decrease window width" },
     ["<C-,>"] = { "<cmd>vertical resize +5<cr>", desc = "Increase window width" },
 
     -- buffers
-    ["<A-j>"] = { "<cmd>bprevious<cr>", desc = "Prev buffer" },
-    ["<A-k>"] = { "<cmd>bnext<cr>", desc = "Next buffer" },
+    ["<A-u>"] = { "<cmd>bprevious<cr>", desc = "Prev buffer" },
+    ["<A-i>"] = { "<cmd>bnext<cr>", desc = "Next buffer" },
     ["<A-d>"] = { ":bp | sp | bn | bd<cr>", desc = "Close buffer" },
     ["<C-j>"] = { "<cmd>bprevious<cr>", desc = "Prev buffer" },
     ["<C-k>"] = { "<cmd>bnext<cr>", desc = "Next buffer" },
     ["<C-d>"] = { "<cmd>bp | sp | bn | bd<cr>", desc = "Close buffer" },
 
+    -- spellcheck code
+    ["fd"] = { "<cmd>set spo=camel<cr>", desc = "SpellOptions CamelCase" },
     -- echo test
     -- ["<leader>a"] = { "<cmd>echo 'Hello'<cr>", desc = "test keymap" },
   },
@@ -62,6 +66,18 @@ return {
   t = {
     -- setting a mapping to false will disable it
     -- ["<esc>"] = false,
+    -- windows
+    -- ["<A-l>"] = { "<C-w>l", desc = "next window" },
+    -- ["<A-h>"] = { "<C-w>h", desc = "prev window" },
+    -- ["<A-j>"] = { "<C-w>j", desc = "down window" },
+    -- ["<A-k>"] = { "<C-w>k", desc = "up window" },
+    -- ["<A-m>"] = { "<C-w>v", desc = "vertical split" },
+    -- ["<A-n>"] = { "<C-w>s", desc = "horizontal split" },
+    -- ["<A-,>"] = { "<cmd>vertical resize -10<cr>", desc = "Decrease window width" },
+    -- ["<A-.>"] = { "<cmd>vertical resize +10<cr>", desc = "Increase window width" },
+    --
+    -- -- esc
+    -- ["kj"] = { "<Esc>", desc = "To normal mode" },
   },
 
   i = {
