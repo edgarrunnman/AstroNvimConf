@@ -19,10 +19,14 @@ return {
 
     -- quick save
     ["<C-s>"] = { ":w!<cr>", desc = "Save File" }, -- change description but the same command
+    ["<A-w>"] = { ":w!<cr>", desc = "Save File" }, -- change description but the same command
 
     -- reload
     ["<leader>r"] = { ":so %<CR>", desc = "Reload" },
     ["<leader>R"] = { ":AstroReload<CR>", desc = "Reloads config" },
+
+    -- file-tree-explorer
+    ["<A-e>"] = { ":Neotree toggle<CR>", desc = "file-explorer" },
 
     -- tabs
     ["<A-S-k>"] = { "<cmd>tabnext<CR>", desc = "Next tab" },
@@ -30,24 +34,23 @@ return {
     ["<A-S-l>"] = { "<cmd>tabnew<cr>", desc = "New tab" },
     ["<A-S-d>"] = { "<cmd>tabclose<CR>", desc = "Close tab" },
 
-    -- windows
-    ["<A-l>"] = { "<C-w>l", desc = "next window" },
-    ["<A-h>"] = { "<C-w>h", desc = "prev window" },
-    ["<A-j>"] = { "<C-w>j", desc = "down window" },
-    ["<A-k>"] = { "<C-w>k", desc = "up window" },
-    --["<A-q>"] = { ":q<cr>", desc = "close window" },
-    ["<A-p>"] = { "<C-w>v", desc = "vertical split" },
-    ["<A-o>"] = { "<C-w>s", desc = "horizontal split" },
-    ["<A-,>"] = { "<cmd>vertical resize -10<cr>", desc = "Decrease window width" },
-    ["<A-.>"] = { "<cmd>vertical resize +10<cr>", desc = "Increase window width" },
+    -- windows nav
+    ["<A-q>"] = { ":q<cr>", desc = "close window" },
 
-    ["<C-l>"] = { "<C-w>l", desc = "next window" },
-    ["<C-h>"] = { "<C-w>h", desc = "prev window" },
-    --["<A-q>"] = { ":q<cr>", desc = "close window" },
-    ["<A-m>"] = { "<C-w>v", desc = "vertical split" },
-    ["<A-n>"] = { "<C-w>s", desc = "horizontal split" },
-    ["<C-m>"] = { "<cmd>vertical resize -10<cr>", desc = "Decrease window width" },
-    ["<C-,>"] = { "<cmd>vertical resize +5<cr>", desc = "Increase window width" },
+    ["<A-l>"] = { "<cmd>wincmd l<CR>", desc = "next window" },
+    ["<A-h>"] = { "<cmd>wincmd h<CR>", desc = "prev window" },
+    ["<A-j>"] = { "<cmd>wincmd j<CR>", desc = "down window" },
+    ["<A-k>"] = { "<cmd>wincmd k<CR>", desc = "up window" },
+
+    -- windows split
+    ["<A-o>"] = { "<cmd>vsplit<CR>", desc = "vertical split" },
+    ["<A-y>"] = { "<cmd>split<CR>", desc = "horizontal split" },
+
+    -- windows size
+    ["<A-n>"] = { "<cmd>vertical resize -5<cr>", desc = "Decrease window width" },
+    ["<A-m>"] = { "<cmd>vertical resize +5<cr>", desc = "Increase window width" },
+    ["<A-,>"] = { "<cmd>horizontal resize +2<cr>", desc = "Decrease window width" },
+    ["<A-.>"] = { "<cmd>horizontal resize -2<cr>", desc = "Increase window width" },
 
     -- buffers
     ["<A-u>"] = { "<cmd>bprevious<cr>", desc = "Prev buffer" },
@@ -66,16 +69,30 @@ return {
   t = {
     -- setting a mapping to false will disable it
     -- ["<esc>"] = false,
-    -- windows
-    -- ["<A-l>"] = { "<C-w>l", desc = "next window" },
-    -- ["<A-h>"] = { "<C-w>h", desc = "prev window" },
-    -- ["<A-j>"] = { "<C-w>j", desc = "down window" },
-    -- ["<A-k>"] = { "<C-w>k", desc = "up window" },
-    -- ["<A-m>"] = { "<C-w>v", desc = "vertical split" },
-    -- ["<A-n>"] = { "<C-w>s", desc = "horizontal split" },
-    -- ["<A-,>"] = { "<cmd>vertical resize -10<cr>", desc = "Decrease window width" },
-    -- ["<A-.>"] = { "<cmd>vertical resize +10<cr>", desc = "Increase window width" },
-    --
+    -- windows nav
+    ["<A-l>"] = { "<cmd>wincmd l<CR>", desc = "next window" },
+    ["<A-h>"] = { "<cmd>wincmd h<CR>", desc = "prev window" },
+    ["<A-j>"] = { "<cmd>wincmd j<CR>", desc = "down window" },
+    ["<A-k>"] = { "<cmd>wincmd k<CR>", desc = "up window" },
+    ["<A-q>"] = { "<cmd>q<cr>", desc = "close window" },
+
+    -- windows split
+    ["<A-o>"] = { "<cmd>vsplit<CR>", desc = "vertical split" },
+    ["<A-y>"] = { "<cmd>split<CR>", desc = "horizontal split" },
+
+    -- windows size
+    ["<A-n>"] = { "<cmd>vertical resize -5<cr>", desc = "Decrease window width" },
+    ["<A-m>"] = { "<cmd>vertical resize +5<cr>", desc = "Increase window width" },
+    ["<A-,>"] = { "<cmd>horizontal resize +2<cr>", desc = "Decrease window width" },
+    ["<A-.>"] = { "<cmd>horizontal resize -2<cr>", desc = "Increase window width" },
+
+    -- buffers
+    ["<A-u>"] = { "<cmd>bprevious<cr>", desc = "Prev buffer" },
+    ["<A-i>"] = { "<cmd>bnext<cr>", desc = "Next buffer" },
+    ["<A-d>"] = { "<cmd>bp | sp | bn | bd<cr>", desc = "Close buffer" },
+    ["<C-j>"] = { "<cmd>bprevious<cr>", desc = "Prev buffer" },
+    ["<C-k>"] = { "<cmd>bnext<cr>", desc = "Next buffer" },
+    ["<C-d>"] = { "<cmd>bp | sp | bn | bd<cr>", desc = "Close buffer" },
     -- -- esc
     -- ["kj"] = { "<Esc>", desc = "To normal mode" },
   },
